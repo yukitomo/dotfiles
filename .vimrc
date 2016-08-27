@@ -1,9 +1,8 @@
-
-"--------------------------
+" --------------------------
 " Neobundle Init.
-"---------------------------
-"Vim の起動時に NeoBundle がなかった場合にのみ実行できる
-":NeoBundleInit というコマンドを定義
+" ---------------------------
+" Vim の起動時に NeoBundle がなかった場合にのみ実行できる
+" :NeoBundleInit というコマンドを定義
 
 let $VIMBUNDLE = '~/.vim/bundle'
 let $NEOBUNDLEPATH = $VIMBUNDLE . '/neobundle.vim'
@@ -59,10 +58,10 @@ endif
 "---------------------------
 " bundleで管理するディレクトリを指定
 set runtimepath+=~/.vim/bundle/neobundle.vim/
- 
+
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
- 
+
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -72,7 +71,6 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle '29decibel/codeschool-vim-theme'
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'croaker/mustang-vim'
-NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'jeffreyiacono/vim-colors-wombat'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'vim-scripts/Lucius'
@@ -82,17 +80,26 @@ NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'therubymug/vim-pyte'
 NeoBundle 'tomasr/molokai'
 
-" NERDTreeを設定                 
-NeoBundle 'scrooloose/nerdtree' 
+" NERDTreeを設定
+NeoBundle 'scrooloose/nerdtree'
 
 "autoclose:括弧保管
 NeoBundle 'Townk/vim-autoclose'
 
 "quickrun:ちょっとしたコード片を書いて実行して確認
-"NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'thinca/vim-quickrun'
 
 "grep.vim:ディレクトリを再帰的にgrep,ファイルopen
 "NeoBundle 'grep.vim'
+
+"ag(The Silver Searcher) A code searching tool similar to ack, with a focus on speed.
+"http://blog.glidenote.com/blog/2013/02/28/the-silver-searcher-better-than-ack/
+NeoBundle 'rking/ag.vim'
+
+"For Perl
+NeoBundle 'petdance/vim-perl'
+NeoBundle 'hotchpotch/perldoc-vim'
+NeoBundle 'Shougo/neocomplcache'
 
 "検索
 set ignorecase          " 大文字小文字を区別しない
@@ -112,6 +119,7 @@ set hidden              " バッファを閉じる代わりに隠す（Undo履�
 set switchbuf=useopen   " 新しく開く代わりにすでに開いてあるバッファを開く
 set showmatch           " 対応する括弧などをハイライト表示する
 set matchtime=3         " 対応括弧のハイライト表示を3秒にする
+set cursorline"         " 行番号、カーソルライン表示"
 "インデント
 set expandtab           "タブ入力を複数の空白入力に置き換える
 set tabstop=4           "画面上でタブ文字が占める幅
@@ -126,15 +134,6 @@ set matchpairs& matchpairs+=<:>
 " バックスペースでなんでも消せるようにする
 set backspace=indent,eol,start
 
-" クリップボードをデフォルトのレジスタとして指定。後にYankRingを使うので
-" 'unnamedplus'が存在しているかどうかで設定を分ける必要がある
-"if has('unnamedplus')
-    " set clipboard& clipboard+=unnamedplus " 2013-07-03 14:30 unnamed 追加
-"    set clipboard& clipboard+=unnamedplus,unnamed 
-"else
-    " set clipboard& clipboard+=unnamed,autoselect 2013-06-24 10:00 autoselect 削除
-"    set clipboard& clipboard+=unnamed
-"endif
 
 " Swapファイル？Backupファイル？前時代的すぎ
 " なので全て無効化する
@@ -155,7 +154,7 @@ set t_vb=
 set novisualbell
 
 " デフォルト不可視文字は美しくないのでUnicodeで綺麗に
-"set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲ 
+"set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
 set listchars=tab:>-,trail:-
 "python用プラグイン
 "NeoBundle 'Flake8-vim'
@@ -165,22 +164,6 @@ NeoBundle 'scrooloose/syntastic'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
-
-"pyflake setting
-"保存時に自動でチェック
-"let g:PyFlakeOnWrite = 1
-"let g:PyFlakeCheckers = 'pep8,mccabe,pyflakes'
-"let g:PyFlakeDefaultComplexity=10
-
-"syntactic
-"let g:syntastic_python_checkers = ['pyflakes', 'pep8']
-
-" rename用のマッピングを無効にしたため、代わりにコマンドを定義
-"command! -nargs=0 JediRename :call jedi#rename()
-
-" pythonのrename用のマッピングがquickrunとかぶるため回避させる
-"let g:jedi#rename_command = ""
-"let g:jedi#pydoc = "k"
 
 call neobundle#end()
 
@@ -205,14 +188,117 @@ NeoBundleCheck
 "http://shirakiya.hatenablog.com/entry/2015/01/30/025257
 "-------------------------
 let OSTYPE = system('uname')
-if OSTYPE == "Linux\n"
-    noremap y y:wv<CR>
-    noremap p :rv!<CR>p
-endif
+noremap y y:wv<CR>
+noremap p :rv!<CR>p
 set viminfo='50,\"3000,:0,n~/.viminfo'
 
 "-------------------------
 "クリップボードとvimを連携（Macのみ必要）
 "------------------------
 set clipboard+=unnamed
-"
+
+"-----------------------
+"ESC が遠いのでCTRL + Jに変更
+"----------------------
+imap <C-[> <esc>
+
+"-----------------------
+"ビープ音を消す
+"http://sunrise.hatenablog.com/entry/20100620/1277018903
+"-----------------------
+set visualbell
+set vb t_vb=
+if has('mouse')
+      set mouse=a
+endif
+
+" Anywhere SID.
+function! s:SID_PREFIX()
+  return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
+endfunction
+
+"------------------------
+"タブページ移動ショートカット
+"http://qiita.com/wadako111/items/755e753677dd72d8036d
+"------------------------
+
+" Set tabline.
+function! s:my_tabline()  "{{{
+  let s = ''
+  for i in range(1, tabpagenr('$'))
+    let bufnrs = tabpagebuflist(i)
+    let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
+    let no = i  " display 0-origin tabpagenr.
+    let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
+    let title = fnamemodify(bufname(bufnr), ':t')
+    let title = '[' . title . ']'
+    let s .= '%'.i.'T'
+    let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
+    let s .= no . ':' . title
+    let s .= mod
+    let s .= '%#TabLineFill# '
+  endfor
+  let s .= '%#TabLineFill#%T%=%#TabLine#'
+  return s
+endfunction "}}}
+let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
+set showtabline=2 " 常にタブラインを表示
+
+" The prefix key.
+nnoremap    [Tag]   <Nop>
+nmap    t [Tag]
+" Tab jump
+for n in range(1, 9)
+  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
+" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
+
+map <silent> [Tag]c :tablast <bar> tabnew<CR>
+" tc 新しいタブを一番右に作る
+map <silent> [Tag]x :tabclose<CR>
+" tx タブを閉じる
+map <silent> [Tag]n :tabnext<CR>
+" tn 次のタブ
+map <silent> [Tag]p :tabprevious<CR>
+" tp 前のタブ
+
+
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+ " Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Select with <TAB>
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+let g:neocomplcache_ctags_arguments_list = {
+  \ 'perl' : '-R -h ".pm"'
+  \ }
+
+let g:neocomplcache_snippets_dir = "~/.vim/snippets"
+" Define dictionary.
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default'    : '',
+    \ 'perl'       : $HOME . '/.vim/dict/perl.dict'
+    \ }
+
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+"for .psgi, .t 
+autocmd BufNewFile,BufRead *.psgi   set filetype=perl
+autocmd BufNewFile,BufRead *.t      set filetype=perl
+
+
