@@ -1,26 +1,19 @@
-
 # dotfiles
 
 #利用の仕方
+
+```
 git clone https://github.com/yukitomo/dotfiles.git
-
-cd dotfiles
-
+cd dotfileslink
 bash dotfilesLink.sh
-
-#NEObundleのインストール
-mkdir -p ~/.vim/bundle
-
-git clone hittps://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-
-vimの起動
+```
 
 #zsh setting
+- prezto install https://github.com/sorin-ionescu/prezto
+- 以下でprezto用にシンボリックリンクはる
 
-Oh-my-zshのDL
+```
+ln -s ~/dotfiles/prompt_tomo_setup ~/.zprezto/modules/prompt/functions/prompt_tomo_setup
+```
 
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-vim .zshrc
-
-change ZSH_THEME="wezm"
