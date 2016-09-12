@@ -175,6 +175,7 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
 " 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
 NeoBundleCheck
@@ -301,4 +302,11 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 autocmd BufNewFile,BufRead *.psgi   set filetype=perl
 autocmd BufNewFile,BufRead *.t      set filetype=perl
 
+" for gf
+set path+=~/fout/fout/
+set path+=~/fout/fout_analysis
+set path+=~/fout/fout_logs
 
+" gf の縦分割
+" http://yuheikagaya.hatenablog.jp/entry/2012/12/03/202556
+nnoremap gs :vertical wincmd f<CR>
