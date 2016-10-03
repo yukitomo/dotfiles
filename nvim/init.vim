@@ -80,8 +80,6 @@ set ignorecase          " 大文字小文字を区別しない
 set smartcase           " 検索文字に大文字がある場合は大文字小文字を区別
 set hlsearch            " 検索マッチテキストをハイライト
 
-imap <C-[> <esc>        " ESC が遠いので Ctrl + J
-
 " for gf
 set path+=~/fout/fout/
 set path+=~/fout/fout_analysis
@@ -90,3 +88,10 @@ set path+=~/fout/fout_logs
 " gf の縦分割
 " http://yuheikagaya.hatenablog.jp/entry/2012/12/03/202556
 nnoremap gs :vertical wincmd f<CR>
+
+" 入力モードでのカーソル移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
