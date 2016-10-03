@@ -63,7 +63,6 @@ set infercase           " 補完時に大文字小文字を区別しない
 set virtualedit=all     " カーソルを文字が存在しない部分でも動けるようにする
 set hidden              " バッファを閉じる代わりに隠す（Undo履歴を残すため）
 set switchbuf=useopen   " 新しく開く代わりにすでに開いてあるバッファを開く
-s
 
 "表示関係
 set list                " 不可視文字の可視化
