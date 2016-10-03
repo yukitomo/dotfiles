@@ -71,6 +71,9 @@ set wrap                " 長いテキストの折り返し
 set textwidth=0         " 自動的に改行が入るのを無効化
 set colorcolumn=80      " その代わり80文字目にラインを入れる
 
+"ビープ音の停止
+set visualbell
+
 
 "検索
 set ignorecase          " 大文字小文字を区別しない
