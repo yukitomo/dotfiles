@@ -1,0 +1,14 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+# Colors
+
+[[plugins]] # hybrid
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]] # solarized
+repo = 'altercation/vim-colors-solarized'
