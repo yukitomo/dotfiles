@@ -40,10 +40,6 @@ if dein#check_install()
 endif
 " }}}
 
-" colorscheme
-syntax enable
-set background=dark
-colorscheme solarized
 
 " edit settings
 set clipboard+=unnamedplus  " share clipboard vim-mac
@@ -95,3 +91,8 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
+" colorscheme
+syntax enable
+set background=dark
+colorscheme solarized
+ 

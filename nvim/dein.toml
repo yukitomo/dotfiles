@@ -5,10 +5,10 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
-# Colors
-
-[[plugins]] # hybrid
-repo = 'w0ng/vim-hybrid'
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = 'let g:deoplete#enable_at_startup = 1'
 
 [[plugins]] # solarized
 repo = 'altercation/vim-colors-solarized'
+
