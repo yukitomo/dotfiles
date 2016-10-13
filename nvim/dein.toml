@@ -12,3 +12,5 @@ hook_add = 'let g:deoplete#enable_at_startup = 1'
 [[plugins]] # solarized
 repo = 'altercation/vim-colors-solarized'
 
+[[plugins]]
+repo = 'rking/ag.vim'

@@ -35,8 +35,8 @@ if dein#check_install(['vimproc'])
   call dein#install(['vimproc'])
 endif
 " その他インストールしていないものはこちらに入れる
-if dein#check_install()
-  call dein#install()
+if dein#check_install(['ag'])
+  call dein#install(['ag'])
 endif
 " }}}
 
