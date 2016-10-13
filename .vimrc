@@ -23,7 +23,7 @@ set hidden              " バッファを閉じる代わりに隠す（Undo履�
 set switchbuf=useopen   " 新しく開く代わりにすでに開いてあるバッファを開く
 
 "表示関係
-set list                " 不可視文字の可視化
+"set list                " 不可視文字の可視化
 set number              " 行番号の表示
 set wrap                " 長いテキストの折り返し
 set textwidth=0         " 自動的に改行が入るのを無効化
