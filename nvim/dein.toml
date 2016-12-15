@@ -14,3 +14,12 @@ repo = 'altercation/vim-colors-solarized'
 
 [[plugins]]
 repo = 'rking/ag.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
