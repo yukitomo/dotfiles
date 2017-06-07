@@ -30,16 +30,6 @@ endif
 " 適宜 call dein#update や call dein#clear_state を呼んでください。
 " そもそもキャッシュしなくて良いならload_state/save_stateを呼ばないようにしてください。
 
-" vimprocだけは最初にインストールしてほしい
-if dein#check_install(['vimproc'])
-  call dein#install(['vimproc'])
-endif
-" その他インストールしていないものはこちらに入れる
-if dein#check_install(['ag'])
-  call dein#install(['ag'])
-endif
-" }}}
-
 
 " edit settings
 set clipboard+=unnamedplus  " share clipboard vim-mac
@@ -102,7 +92,8 @@ colorscheme solarized
 "for .psgi, .t
 autocmd BufNewFile,BufRead *.psgi   set filetype=perl
 autocmd BufNewFile,BufRead *.t      set filetype=perl
-autocmd BufNewFile,BufRead *.hql      set filetype=sql
+autocmd BufNewFile,BufRead *.hql    set filetype=sql
+autocmd BufNewFile,BufRead *.scala  set filetype=scala
 
 " window_split, tab
 " http://qiita.com/wadako111/items/755e753677dd72d8036d

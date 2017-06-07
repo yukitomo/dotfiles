@@ -28,4 +28,9 @@ repo = 'Shougo/vimfiler'
 repo = '5t111111/alt-gtags.vim'
 
 [[plugins]]
-repo = 'derekwyatt/vim-scala'
+repo = 'derekwyatt/vim-scala.git'
+on_ft = ['scala']
+
+[[plugins]]
+repo  = 'cespare/vim-toml'
+on_ft = 'toml'
