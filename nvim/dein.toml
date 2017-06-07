@@ -23,3 +23,9 @@ repo = 'simeji/winresizer'
 
 [[plugins]]
 repo = 'Shougo/vimfiler'
+
+[[plugins]]
+repo = '5t111111/alt-gtags.vim'
+
+[[plugins]]
+repo = 'derekwyatt/vim-scala'

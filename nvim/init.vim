@@ -1,4 +1,4 @@
-" ref. http://qiita.com/okamos/items/2259d5c770d51b88d75b
+"ref. http://qiita.com/okamos/items/2259d5c770d51b88d75b
 
 " dein settings {{{
 if &compatible
@@ -71,6 +71,8 @@ set colorcolumn=80      " その代わり80文字目にラインを入れる
 "ビープ音の停止
 set visualbell
 
+"swpファイルを生成しない
+set noswapfile
 
 "検索
 set ignorecase          " 大文字小文字を区別しない
