@@ -27,12 +27,13 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 " プラグインの追加・削除やtomlファイルの設定を変更した後は
-" 適宜 call dein#update や call dein#clear_state を呼んでください。
+" 適宜 call dein#update() や call dein#clear_state() を呼んでください。
 " そもそもキャッシュしなくて良いならload_state/save_stateを呼ばないようにしてください。
 
 
 " edit settings
-set clipboard+=unnamedplus  " share clipboard vim-mac
+"set clipboard+=unnamedplus  " share clipboard vim-mac
+set clipboard=unnamed
 set showmatch           " 対応する括弧などをハイライト表示する
 set matchtime=3         " 対応括弧のハイライト表示を3秒にする
 set cursorline"         " 行番号、カーソルライン表示"
@@ -84,11 +85,15 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
+" add space after comma
+" https://superuser.com/questions/679857/set-vim-to-auto-insert-spaces-after-comma
+inoremap , ,<space>
+
 " colorscheme
 syntax enable
 set background=dark
 colorscheme solarized
- 
+
 "for .psgi, .t
 autocmd BufNewFile,BufRead *.psgi   set filetype=perl
 autocmd BufNewFile,BufRead *.t      set filetype=perl

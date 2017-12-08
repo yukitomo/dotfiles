@@ -34,3 +34,15 @@ on_ft = ['scala']
 [[plugins]]
 repo  = 'cespare/vim-toml'
 on_ft = 'toml'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'tpope/vim-rhubarb'
+
+[[plugins]]
+repo = 'derekwyatt/vim-scala'
