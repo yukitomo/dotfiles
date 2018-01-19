@@ -5,10 +5,6 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = 'let g:deoplete#enable_at_startup = 1'
-
 [[plugins]] # solarized
 repo = 'altercation/vim-colors-solarized'
 
@@ -45,4 +41,7 @@ repo = 'tpope/vim-fugitive'
 repo = 'tpope/vim-rhubarb'
 
 [[plugins]]
-repo = 'derekwyatt/vim-scala'
+repo = 'lambdalisue/gina.vim'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
