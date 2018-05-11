@@ -1,0 +1,14 @@
+- name: Update homebrew itself first
+  homebrew: update_homebrew=yes
+ 
+- name: Install Homebrew cask packages
+  homebrew_cask: name={{ item }}
+  with_items:
+      - virtualbox
+      - vagrant
+      - dropbox
+      - karabiner-elements
+      - intellij-idea-ce
+      - google-japanese-ime
+      - bitbar
+      - dash

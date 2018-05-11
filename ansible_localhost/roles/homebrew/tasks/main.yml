@@ -1,0 +1,34 @@
+- name: Update homebrew itself first
+  homebrew: update_homebrew=yes
+ 
+- name: Install homebrew packages
+  homebrew: name={{ item }}
+  with_items:
+      - ansible
+      - python
+      - pyenv
+      - git
+      - tmux
+      - tree
+      - wget
+      - zsh
+      - autoconf
+      - automake
+      - cmake
+      - htop
+      - hub
+      - jq
+      - neovim
+      - perl
+      - perl-build
+      - pkg-config
+      - plenv
+      - readline
+      - redis
+      - ruby
+      - sqlite
+      - tmux
+      - python3
+      - the_silver_searcher
+      - neovim
+      - reattach-to-user-namespace
