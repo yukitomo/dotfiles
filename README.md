@@ -5,6 +5,8 @@
 
 ## 利用の仕方
 
+- 以下の実行には, zsh, neovim, tmux の Install が事前にされている必要がある
+
 ### prezto の準備
 - zshはpreztoで管理する。以下のようにInstall https://github.com/sorin-ionescu/prezto
 

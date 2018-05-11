@@ -34,3 +34,5 @@ $ source ~/.bash_profile
 # ansible playbook の実行
 $ ansible-playbook -i hosts localhost.yml --ask-sudo-pass
 ```
+- 上記の実行で各種AppがInstallされる。
+- zsh, neovim, tmux への設定適用は `dotfiles` の項を参照 https://github.com/yukitomo/dotfiles
