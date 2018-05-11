@@ -1,6 +1,7 @@
 #
 # Executes commands at the start of an interactive session.
 #
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -42,14 +43,6 @@ alias g='git'
 alias glog='git log --oneline --graph'
 alias gitconfig='cat ~/.gitconfig'
 
-# ssh 関連
-
-# リモートサーバ関連
-
-# リポジトリ
-
-# aws
-
 #ビープ音の削除
 setopt no_beep
 
@@ -58,4 +51,19 @@ bindkey -e
 
 # plenv initialize
 eval "$(plenv init -)"
+
+# loading private settings 
+function source_file {
+  if [ $# -lt 1 ];then
+    echo "ERROR!!! source_file is called w/o an argument"
+    return
+  fi
+  arg="$1"
+  shift
+  if [ -r "$arg" ]; then
+    source "$arg"
+  fi
+}
+
+source_file ~/Dropbox/zshrc_private
 
