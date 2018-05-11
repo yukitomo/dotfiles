@@ -37,3 +37,23 @@ $ bash dotfilesLink.sh
 $ :call dein#install()
 ```
 
+### 備考
+- 以下の実装で private な設定はDropbox以下のファイルから読み込むように設定
+- https://github.com/yukitomo/dotfiles/blob/e7c660703983817421237c1e0e8c5388b5d0a363/zshrc#L55-L68 
+
+```
+# loading private settings 
+function source_file {
+  if [ $# -lt 1 ];then
+    echo "ERROR!!! source_file is called w/o an argument" 
+    return
+  fi
+  arg="$1" 
+  shift
+  if [ -r "$arg" ]; then
+    source "$arg" 
+  fi
+}
+
+source_file ~/Dropbox/zshrc_private 
+```
