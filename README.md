@@ -31,5 +31,9 @@ $ chsh -s /bin/zsh
 ```
 $ bash dotfilesLink.sh
 ```
+- neovim へのconfigファイルの適用は起動時に以下のコマンドを叩く
 
+```
+$ :call dein#install()
+```
 
