@@ -1,4 +1,9 @@
 #!/bin/sh
-ln -sf ~/dotfiles/.zshrc  ~/.zshrc 
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
+
+# zsh
+ln -sf ~/dotfiles/zshrc ~/.zprezto/runcoms/zshrc
+ln -sf ~/dotfiles/zshrc ~/.zprezto/runcoms/zshrc
+ln -sf ~/dotfiles/prompt_tomo_setup ~/.zprezto/modules/prompt/functions/prompt_tomo_setup
+
+# tmux
 ln -sf ~/dotfiles/.tmux.conf  ~/.tmux.conf
