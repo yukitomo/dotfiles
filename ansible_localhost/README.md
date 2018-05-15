@@ -33,6 +33,9 @@ $ source ~/.bash_profile
 
 # ansible playbook の実行
 $ ansible-playbook -i hosts localhost.yml --ask-sudo-pass
+
+# brew, brew-cask, defaults を別で実行したい時はymlの指定を任意に変える
+$ ansible-playbook -i hosts localhost_hoge.yml --ask-sudo-pass
 ```
 - 上記の実行で各種AppがInstallされる。
 - zsh, neovim, tmux への設定適用は `dotfiles` の項を参照 https://github.com/yukitomo/dotfiles
