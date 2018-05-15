@@ -1,6 +1,6 @@
 - name: Update homebrew itself first
   homebrew: update_homebrew=yes
- 
+
 - name: Install homebrew packages
   homebrew: name={{ item }}
   with_items:
@@ -32,3 +32,4 @@
       - the_silver_searcher
       - neovim
       - reattach-to-user-namespace
+      - scala
