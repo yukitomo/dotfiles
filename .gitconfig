@@ -1,0 +1,21 @@
+[core]
+    editor = /usr/local/bin/vim
+[alias]
+    g = "git"
+    st = "status"
+    co = "commit"
+    pu = "push"
+    br = "branch"
+    ch = "checkout"
+    chm = "checkout master"
+    ad = "add"
+    ti = "!git branch | grep '^\\*' | sed 's/^\\* *//' | sed 's/-.*//' | sed 's/^/https:\\/\\/redmine.fout.jp\\/issues\\//'; git status"
+    see = browse
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[merge]
+    tool = vimdiff
+[mergetool]
+    prompt = false 
