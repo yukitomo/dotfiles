@@ -1,5 +1,5 @@
 [core]
-    editor = /usr/local/bin/vim
+    editor = vim -c \"set fenc=utf-8\"
 [alias]
     g = "git"
     st = "status"
@@ -18,4 +18,4 @@
 [merge]
     tool = vimdiff
 [mergetool]
-    prompt = false 
+    prompt = false
