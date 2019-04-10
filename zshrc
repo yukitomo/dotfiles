@@ -67,3 +67,4 @@ function source_file {
 
 source_file ~/Dropbox/zshrc_private
 
+eval "$(pyenv init -)"
