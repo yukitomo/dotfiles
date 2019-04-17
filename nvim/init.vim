@@ -150,3 +150,9 @@ map <silent> [Tag]p :tabprevious<CR>
 
 " shortcut for NERDTree Ctrl+e
 nnoremap <silent><C-n> :NERDTree<CR>
+
+" GNU Global
+map <C-h> :Gtags -f %<CR>
+map <C-j> :GtagsCursor<CR>
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
