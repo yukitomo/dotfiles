@@ -19,3 +19,6 @@
     tool = vimdiff
 [mergetool]
     prompt = false
+[user]
+	name = Yuki Tomo
+	email = tomo@fout.jp
