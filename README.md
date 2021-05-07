@@ -1,14 +1,27 @@
-# dotfiles
-- 全く設定のされていないPCに対しては `dotfiles/ansible_localhost` で事前にApplication をInstallする
-- https://github.com/yukitomo/dotfiles/tree/master/ansible_localhost
+# 環境構築の大枠
+- 1. Homebrew Bundle で Application をインストール
+- 2. 各種設定ファイルの同期 & 読み込み
 
+## 1. Homebrew Bundle で Application をインストール
 
-## 利用の仕方
+- homebrew をインストール https://brew.sh/index_ja
+- 本リポジトリ以下の `./Brewfile` を対象のPCに準備
+- 以下コマンドを実行し、各種 Application をインストール
+    - 参考 : https://www.karakaram.com/how-to-automate-your-mac-set-up/
 
-- 以下の実行には, zsh, neovim, tmux の Install が事前にされている必要がある
+```
+$ brew bundle
+```
 
-### prezto の準備
-- zshはpreztoで管理する。以下のようにInstall https://github.com/sorin-ionescu/prezto
+## 2. 各種設定 ファイルの同期 & 読み込み
+
+- 本リポジトリを clone する
+- 対象PCで Dropbox にログインし、private な config ファイル & その他を同期しておく
+    - `~/Dropbox/zshrc_private`
+    - `Dash`, `karabiner`, `Quiver.qvlibrary` etc...
+
+### zsh & prezto の設定
+- zsh は prezto で管理する。以下のようにInstall https://github.com/sorin-ionescu/prezto
 
 ```
 # zsh を起動
@@ -37,23 +50,23 @@ $ bash dotfilesLink.sh
 $ :call dein#install()
 ```
 
-### 備考
-- 以下の実装で private な設定はDropbox以下のファイルから読み込むように設定
-- https://github.com/yukitomo/dotfiles/blob/e7c660703983817421237c1e0e8c5388b5d0a363/zshrc#L55-L68 
+### private な config について
+- 以下の実装で private な設定はDropbox以下のファイルから読み込まれる
+- https://github.com/yukitomo/dotfiles/blob/e7c660703983817421237c1e0e8c5388b5d0a363/zshrc#L55-L68
 
 ```
-# loading private settings 
+# loading private settings
 function source_file {
   if [ $# -lt 1 ];then
-    echo "ERROR!!! source_file is called w/o an argument" 
+    echo "ERROR!!! source_file is called w/o an argument"
     return
   fi
-  arg="$1" 
+  arg="$1"
   shift
   if [ -r "$arg" ]; then
-    source "$arg" 
+    source "$arg"
   fi
 }
 
-source_file ~/Dropbox/zshrc_private 
+source_file ~/Dropbox/zshrc_private
 ```
