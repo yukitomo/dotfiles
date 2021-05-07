@@ -22,6 +22,9 @@ export PATH=$HOME/perl5/bin:$PATH;
 export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB;
 export XDG_CONFIG_HOME="$HOME/dotfiles" # for neovim
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export PIPENV_VENV_IN_PROJECT=true
+export PATH=$HOME/.nodebrew/current/bin:$PATH;
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 # aliases
 # example: alias hoge='cat ~/.zshrc'
