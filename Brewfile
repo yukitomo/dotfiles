@@ -25,7 +25,6 @@ brew "scala"
 
 # 'brew install --cask'
 cask "karabiner-elements"
-cask "google-japanese-ime"
 cask "google-chrome"
 cask "dash"
 cask "trailer"
