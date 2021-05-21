@@ -24,6 +24,7 @@ brew "reattach-to-user-namespace"
 brew "scala"
 
 # 'brew install --cask'
+cask "dropbox"
 cask "karabiner-elements"
 cask "google-chrome"
 cask "dash"
@@ -45,4 +46,3 @@ mas "1Password 7", id:1333542190
 mas "Quiver", id:866773894
 mas "BetterSnapTool", id:417375580
 mas "LINE", id:539883307
-mas "Dropbox", id:327630330
