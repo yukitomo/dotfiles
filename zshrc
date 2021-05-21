@@ -28,7 +28,6 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 # aliases
 # example: alias hoge='cat ~/.zshrc'
-eval "$(hub alias -s)"
 
 # alias
 alias nv='nvim'
@@ -51,9 +50,6 @@ setopt no_beep
 
 # ctrl+a, e など
 bindkey -e
-
-# plenv initialize
-eval "$(plenv init -)"
 
 # loading private settings 
 function source_file {
