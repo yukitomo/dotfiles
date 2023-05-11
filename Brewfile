@@ -34,6 +34,9 @@ cask "spotify"
 cask "mendeley"
 cask "slack"
 cask "alfred3"
+cask "visual-studio-code"
+cask "deepl"
+cask "microsoft-edge"
 # for localdev
 cask "virtualbox"
 cask "vagrant"
@@ -46,3 +49,5 @@ mas "1Password 7", id:1333542190
 mas "Quiver", id:866773894
 mas "BetterSnapTool", id:417375580
 mas "LINE", id:539883307
+mas "AS Timer", id:512464723
+mas "Focus To-Do: Pomodoro & Tasks", id:1258530160
